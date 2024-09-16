@@ -1,0 +1,155 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import DonElement from "../components/don";
+import { Entete_page_2 } from "../components/entete";
+import Footer from "../components/Footer.astro";
+import Header from "../components/header";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+
+import Diaporama from "../components/diaporama";
+import { Paragraphe_1 } from "../components/paragraphe";
+import { RiArrowRightLine } from "../components/icons";
+
+import BanniereState from "../components/Banniere_state.astro";
+import ContactLine from "../components/ContactLine.astro";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header client:load />
+    <div class='h-[72px] lg:h-[86px]'></div>
+    <BanniereState />
+    <Entete_page_2
+      client:load
+      image='/impact_header.webp'
+      titre='Notre Impact'
+    />
+    <!-- <section class='py-[42px] lg:py-24 px-6 lg:px-0 bg-[#d1edfc]'>
+      <div class='max-w-[1280px] mx-auto'>
+        <Paragraphe_1 image='/image_3.webp'>
+          <div class='lg:pl-6'>
+            <div class='text-3xl lg:text-5xl py-6 font-judson font-bold'>
+              Devenez un acteur du changement en soutenant notre association
+            </div>
+            <div class='mb-6'>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+              pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+              deleniti nulla atque error repellat odit, aut dicta optio. Dolorem
+              corporis molestiae nulla.
+            </div>
+            <div class='mb-6'>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas
+              pariatur voluptatem deserunt saepe tempora magni ipsam veniam
+              deleniti nulla atque error repellat odit, aut dicta optio.
+            </div>
+          </div>
+        </Paragraphe_1>
+      </div>
+    </section> -->
+    <section class='py-[42px] lg:py-24 px-6 lg:px-0'>
+      <div class='max-w-[1280px] mx-auto'>
+        <div
+          class='font-judson font-bold text-3xl lg:text-6xl text-center mb-10'>
+          Impact de nos actions
+        </div>
+        <div class='grid grid-cols-1 lg:grid-cols-3 gap-6'>
+          <div class='flex-1 border p-4 lg:p-6 h-full bg-[#d1edfc] rounded-xl'>
+            <div class='text-2xl lg:text-3xl h-[130px] font-semibold'>
+              Amélioration des Conditions de Vie
+            </div>
+            <div>
+              Grâce à nos interventions, de nombreux enfants et familles
+              bénéficient d'un soutien qui améliore leurs conditions de vie et
+              leur sécurité. Plus de 1400 familles bénéficient de nos services
+              chaque année.
+            </div>
+          </div>
+          <div class='flex-1 border p-4 lg:p-6 h-full bg-[#d1edfc] rounded-xl'>
+            <div class='text-2xl lg:text-3xl h-[130px] font-semibold'>
+              Renforcement des Capacités
+            </div>
+            <div>
+              Les enfants et les familles acquièrent des compétences et des
+              ressources qui leur permettent de mieux faire face aux défis de la
+              vie quotidienne. Notamment avec des ateliers participatifs et des
+              formations spécifiques.
+            </div>
+          </div>
+          <div class='flex-1 border p-4 lg:p-6 h-full bg-[#d1edfc] rounded-xl'>
+            <div class='text-2xl lg:text-3xl h-[130px] font-semibold'>
+              Changement de Mentalités
+            </div>
+            <div>
+              Nos actions de sensibilisation contribuent à changer les
+              perceptions et les attitudes de la communauté envers la protection
+              de l'enfance.
+            </div>
+          </div>
+          <div class='flex-1 border p-4 lg:p-6 h-full bg-[#d1edfc] rounded-xl'>
+            <div class='text-2xl lg:text-3xl h-[130px] font-semibold'>
+              Création de Réseaux de Soutien
+            </div>
+            <div>
+              Nous favorisons la création de réseaux de solidarité entre les
+              acteurs locaux, les familles et les enfants, renforçant ainsi le
+              tissu social.
+            </div>
+          </div>
+          <div class='flex-1 border p-4 lg:p-6 h-full bg-[#d1edfc] rounded-xl'>
+            <div class='text-2xl lg:text-3xl h-[130px] font-semibold'>
+              Mise en place de projets environnementaux
+            </div>
+            <div>
+              Nous encourageons des quartiers verts, inclusifs, durables et
+              responsables.
+            </div>
+          </div>
+        </div>
+        <div class='flex items-center justify-center py-16'>
+          <div class='w-full max-w-[600px]'>
+            <div class='font-bold text-2xl lg:text-3xl text-center mb-9'>
+              Devenez un acteur du changement en soutenant notre association
+            </div>
+            <div class='flex items-center justify-center'>
+              <a
+                href='/don'
+                class='px-12 py-2 bg-yellow-400 text-orange-900 font-bold rounded-full'
+                >Faire un don</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Diaporama image='/mon-quartier-propre.webp'>
+      <div class='px-5 lg:px-0 w-full lg:w-[50%] flex h-full items-end'>
+        <div class='py-5 lg:py-11'>
+          <div class='text-2xl text-white'>Mon Quartier Propre</div>
+          <div class='font-judson font-bold text-4xl lg:text-7xl text-white'>
+            Résidents Responsables ...Quartier Propre
+          </div>
+          <div>
+            <a
+              href='/a-propos/notre-equipe'
+              class='flex w-full items-center py-5 font-semibold text-xl gap-5 text-white hover:text-white'>
+              <div
+                class='w-[56px] aspect-square rounded-full flex items-center justify-center bg-yellow-400 text-orange-900'>
+                <RiArrowRightLine className='w-6 h-6' />
+              </div>
+              Notre Équipe
+            </a>
+          </div>
+        </div>
+      </div>
+    </Diaporama>
+
+    <DonElement />
+    <ContactLine />
+    <Footer />
+  </body>
+</html>
